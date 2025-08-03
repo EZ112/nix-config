@@ -87,9 +87,24 @@ perform_disk_operation() {
   success "Filesystems mounted."
 }
 
-generate_nix_config() {
+setup_and_install() {
+  local curr_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) 
+  local config_dir="$curr_dir/nixos"
+  local nix_config_dir=""
+
+  if [ -d "$config_dir" ]; then
+    info "Found local configuration at '$config_dir'."
+    nix_config_dir="$config_dir"
+  fi
+
   info "Generating NixOS configuration..."
   sudo nixos-generate-config --root /mnt
+
+  info "Copying your configuration from '$nix_config_dir'..."
+  sudo rm /mnt/etc/nixos/configuration.nix
+  sudo cp -rT "$nix_config_dir/" /mnt/etc/nixos/
+  success "Custom configuration copied to /mnt/etc/nixos/."
+
   info "Starting NixOS installation... (This will take a while)"
   sudo nixos-install --root /mnt
   success "NixOS installation complete!"
@@ -100,7 +115,7 @@ main(){
   select_disk
   confirm_installation
   perform_disk_operation
-  generate_nix_config
+  setup_and_install
 }
 
 main
