@@ -50,7 +50,7 @@ in
      extraGroups = [ "wheel" ]; 
   };
 
-  home-manager.users.ez = /home/ez/dotfiles/home.nix;
+  home-manager.users.ez = ./home.nix;
   home-manager.backupFileExtension = "backup";
 
   programs.starship.enable = true;
