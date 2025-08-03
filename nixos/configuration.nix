@@ -68,7 +68,7 @@ in
 
   # Font
   fonts.packages = with pkgs; [
-     inconsolata-nerdfont
+     nerd-fonts.inconsolata
   ];
 
   system.stateVersion = "25.05"; # Do not Change this value
