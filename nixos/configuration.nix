@@ -39,7 +39,7 @@ in
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  networking.hostName = "ez"; # Define your hostname.
+  networking.hostName = "zen"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
