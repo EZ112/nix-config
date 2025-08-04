@@ -47,16 +47,16 @@
    # Home Manager is pretty good at managing dotfiles. The primary way to manage
    # plain files is through 'home.file'.
    home.file = {
-      ".bashrc".source = ../.bashrc;
+      ".bashrc".source = ../../.bashrc;
 
-      ".config/starship.toml".source = ../starship.toml;
+      ".config/starship.toml".source = ../../starship.toml;
 
-      ".config/alacritty".source = ../alacritty;
-      ".config/hypr".source = ../hypr;
-      ".config/neofetch".source = ../neofetch;
-      ".config/rofi".source = ../rofi;
-      ".config/wallpapers".source = ../wallpapers;
-      ".config/waybar".source = ../waybar;
+      ".config/alacritty".source = ../../alacritty;
+      ".config/hypr".source = ../../hypr;
+      ".config/neofetch".source = ../../neofetch;
+      ".config/rofi".source = ../../rofi;
+      ".config/wallpapers".source = ../../wallpapers;
+      ".config/waybar".source = ../../waybar;
    };
 
    home.stateVersion = "25.05"; # Do not Change this value

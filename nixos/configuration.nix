@@ -9,67 +9,28 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [       
       ./hardware-configuration.nix
+
+      # System
+      ./system/base.nix
+      ./system/bluetooth.nix
+      ./system/compositor.nix
+      ./system/fonts.nix
+      ./system/network.nix
+      ./system/login.nix
+
+      # User
+      ./user/ez.nix
+
+      # Packages
+      ./pkgs/lib.nix
+      ./pkgs/starship.nix
+
+      # Home Manager
       (import "${home-manager}/nixos")
+      ./home/config.nix
     ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  # hint electron app to use wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r -t -c Hyprland";
-      };
-    };
-  };
-
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-
-  networking.hostName = "zen"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-  time.timeZone = "Asia/Jakarta";
-
-  users.users.ez = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; 
-  };
-
-  home-manager.users.ez = ./home.nix;
-  home-manager.backupFileExtension = "backup";
-
-  programs.starship.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     brightnessctl
-     neovim 
-     wget
-     neofetch
-     keychain
-     starship
-  ];
-
-  # Font
-  fonts.packages = with pkgs; [
-     nerd-fonts.inconsolata
-  ];
 
   system.stateVersion = "25.05"; # Do not Change this value
 }
