@@ -89,20 +89,21 @@ perform_disk_operation() {
 
 setup_and_install() {
   local curr_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) 
-  local config_path="$curr_dir/nixos/init.nix"
-  local nix_config_path=""
+  local config_dir="$curr_dir/nixos/"
+  local nix_config_dir=""
 
-  if [ -d "$config_path" ]; then
-    info "Found local configuration at '$config_path'."
-    nix_config_path="$config_path"
+  if [ -d "$config_dir" ]; then
+    info "Found local configuration at '$config_dir'."
+    nix_config_dir="$config_dir"
   fi
 
   info "Generating NixOS configuration..."
   sudo nixos-generate-config --root /mnt
 
-  info "Copying your configuration from '$nix_config_path'..."
+  info "Copying your configuration from '$nix_config_dir'..."
   sudo rm /mnt/etc/nixos/configuration.nix
-  sudo cp "$nix_config_path" /mnt/etc/nixos/configuration.nix
+  sudo rsync -av --exclude="configuration.nix" "$nix_config_dir" /mnt/etc/nixos/
+  sudo mv /mnt/etc/nixos/bare.nix /mnt/etc/nixos/configuration.nix
   success "Custom configuration copied to /mnt/etc/nixos/."
 
   info "Starting NixOS installation... (This will take a while)"
