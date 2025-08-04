@@ -55,7 +55,6 @@
       ".config/hypr".source = ../../hypr;
       ".config/neofetch".source = ../../neofetch;
       ".config/rofi".source = ../../rofi;
-      ".config/wallpapers".source = ../../wallpapers;
       ".config/waybar".source = ../../waybar;
    };
 
