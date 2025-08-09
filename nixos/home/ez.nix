@@ -56,6 +56,8 @@
       ".config/neofetch".source = ../../neofetch;
       ".config/rofi".source = ../../rofi;
       ".config/waybar".source = ../../waybar;
+
+      ".local/share/icons".source = ../../icons;
    };
 
    home.stateVersion = "25.05"; # Do not Change this value
