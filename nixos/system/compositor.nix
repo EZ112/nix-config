@@ -4,6 +4,7 @@
   # Hyprland
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
   };
   # hint electron app to use wayland
