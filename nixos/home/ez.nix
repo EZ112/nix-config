@@ -32,16 +32,18 @@
       rofi-wayland
    ];
 
-   programs.firefox.enable = true;
-   programs.git = {
+   programs = {
+    firefox.enable = true;
+    git = {
       enable = true;
       extraConfig = {
          init.defaultBranch = "main";
-	 user = {
-	   name = "Izzi";
-	   email = "izzidz@gmail.com";
-	 };
+         user = {
+           name = "Izzi";
+           email = "izzidz@gmail.com";
+         };
       };
+    };
    };
 
    # Home Manager is pretty good at managing dotfiles. The primary way to manage
