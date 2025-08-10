@@ -55,12 +55,14 @@
 
    xdg.configFile = {
     # File
+    "nvim/init.lua".source = ../../nvim/init.lua;
     "starship.toml".source = ../../starship.toml;
 
     # Directory
     "alacritty".source = ../../alacritty;
     "hypr".source = ../../hypr;
     "neofetch".source = ../../neofetch;
+    "nvim/lua".source = ../../nvim/lua;
     "rofi".source = ../../rofi;
     "waybar".source = ../../waybar;
    };
