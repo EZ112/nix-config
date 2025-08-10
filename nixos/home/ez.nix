@@ -48,16 +48,19 @@
    # plain files is through 'home.file'.
    home.file = {
       ".bashrc".source = ../../.bashrc;
-
-      ".config/starship.toml".source = ../../starship.toml;
-
-      ".config/alacritty".source = ../../alacritty;
-      ".config/hypr".source = ../../hypr;
-      ".config/neofetch".source = ../../neofetch;
-      ".config/rofi".source = ../../rofi;
-      ".config/waybar".source = ../../waybar;
-
       ".local/share/icons".source = ../../icons;
+   };
+
+   xdg.configFile = {
+    # File
+    "starship.toml".source = ../../starship.toml;
+
+    # Directory
+    "alacritty".source = ../../alacritty;
+    "hypr".source = ../../hypr;
+    "neofetch".source = ../../neofetch;
+    "rofi".source = ../../rofi;
+    "waybar".source = ../../waybar;
    };
 
    home.stateVersion = "25.05"; # Do not Change this value
