@@ -19,3 +19,9 @@ map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 -- nvimtree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+
+-- dropbar
+local dropbar_api = require('dropbar.api')
+map('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
+map('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
+map('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
