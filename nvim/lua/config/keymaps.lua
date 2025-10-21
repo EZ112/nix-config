@@ -23,5 +23,12 @@ map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window"
 -- dropbar
 local dropbar_api = require('dropbar.api')
 map('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
-map('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
-map('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
+
+local builtin = require('telescope.builtin')
+map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+map('n', '<leader>fw', builtin.live_grep, { desc = 'Telescope live grep' })
+map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+map('n', '<leader>gt', builtin.git_status, { desc = 'Telescope git status' })
+map('n', '<leader>gm', builtin.git_commits, { desc = 'Telescope git commits' })
+map('n', '<leader>gb', builtin.git_branches, { desc = 'Telescope git branches' })
+map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
