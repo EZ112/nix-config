@@ -23,7 +23,7 @@
       hyprshot
 
       # Terminal
-      alacritty
+      ghostty
 
       # Wallpaper
       swww
@@ -59,7 +59,7 @@
     "starship.toml".source = ../../starship.toml;
 
     # Directory
-    "alacritty".source = ../../alacritty;
+    "ghostty".source = ../../ghostty;
     "hypr".source = ../../hypr;
     "neofetch".source = ../../neofetch;
     "nvim/lua".source = ../../nvim/lua;
