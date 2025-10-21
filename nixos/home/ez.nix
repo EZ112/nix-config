@@ -33,6 +33,7 @@
 
       # LSP
       lua-language-server
+      stylua
    ];
 
    programs = {
@@ -59,6 +60,7 @@
    xdg.configFile = {
     # File
     "nvim/init.lua".source = ../../nvim/init.lua;
+    "nvim/stylua.toml".source = ../../nvim/stylua.toml;
     "starship.toml".source = ../../starship.toml;
 
     # Directory
