@@ -9,6 +9,7 @@
      keychain
      gnumake
      impala
+     wl-clipboard
   ];
 }
 
