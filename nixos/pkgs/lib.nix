@@ -8,6 +8,7 @@
      neofetch
      keychain
      gnumake
+     impala
   ];
 }
 

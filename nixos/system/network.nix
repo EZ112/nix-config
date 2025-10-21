@@ -2,5 +2,5 @@
 
 {
   networking.hostName = "zen";
-  networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
 }
