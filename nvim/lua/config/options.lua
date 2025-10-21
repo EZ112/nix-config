@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- Clipboard
-opt.clipboard = "unnamedplus"
+opt.clipboard = 'unnamedplus'
 
 -- Numbers
 opt.number = true
