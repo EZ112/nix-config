@@ -30,6 +30,9 @@
 
       # Window switcher
       rofi-wayland
+
+      # LSP
+      lua-language-server
    ];
 
    programs = {
@@ -63,6 +66,7 @@
     "hypr".source = ../../hypr;
     "neofetch".source = ../../neofetch;
     "nvim/lua".source = ../../nvim/lua;
+    "nvim/lsp".source = ../../nvim/lsp;
     "rofi".source = ../../rofi;
     "waybar".source = ../../waybar;
    };

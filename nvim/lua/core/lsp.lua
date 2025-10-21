@@ -1,0 +1,27 @@
+vim.lsp.enable({
+    "lua_ls"
+})
+
+local diagnostic = vim.diagnostic
+diagnostic.config({
+    virtual_lines = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = true,
+    },
+    signs = {
+        text = {
+            [diagnostic.severity.ERROR] = "󰅚 ",
+            [diagnostic.severity.WARN] = "󰀪 ",
+            [diagnostic.severity.INFO] = "󰋽 ",
+            [diagnostic.severity.HINT] = "󰌶 ",
+        },
+        numhl = {
+            [diagnostic.severity.ERROR] = "ErrorMsg",
+            [diagnostic.severity.WARN] = "WarningMsg",
+        },
+    },
+})
