@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
      brightnessctl
      neovim 
+     ripgrep
      wget
      neofetch
      keychain
