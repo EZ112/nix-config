@@ -46,6 +46,7 @@
            name = "Izzi";
            email = "izzidz@gmail.com";
          };
+	 core.editor = "nvim";
       };
     };
    };
