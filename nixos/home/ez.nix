@@ -66,6 +66,7 @@
 
     # Directory
     "ghostty".source = ../../ghostty;
+    "dunst".source = ../../dunst;
     "hypr".source = ../../hypr;
     "neofetch".source = ../../neofetch;
     "nvim/lua".source = ../../nvim/lua;

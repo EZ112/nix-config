@@ -1,0 +1,16 @@
+[global]
+    frame_width = 0
+    corner_radius = 4
+    separator_color = foreground
+
+[urgency_low]
+    background = "#282828CC"
+    foreground = "#EBDBB2"
+
+[urgency_normal]
+    background = "#282828CC"
+    foreground = "#EBDBB2"
+
+[urgency_critical]
+    background = "#282828CC"
+    foreground = "#EBDBB2"
