@@ -3,7 +3,9 @@
 window#waybar{
    all: unset;
    color: @foreground;
-   font-size: 12px;
+   font-size: 14px;
+   font-weight: 500;
+   font-family: 'Inconsolata Nerd Font';
 }
 
 .modules-left, .modules-center, .modules-right{
@@ -41,18 +43,22 @@ window#waybar{
    min-width: 40px;
 }
 
-#cpu, #memory, #temperature{
+.drawer .drawer-child .module{
    margin-right: 12px;
 }
 
-#temperature{
-   padding-right: 12px;
+.drawer .drawer-child:last-child .module{
+   padding-right: 8px;
    border-right: 1px solid alpha(@foreground, 0.3);
 }
 
 #custom-expand{
     padding-right: 8px;
     color:alpha(@foreground, .3);
+}
+
+#memory{
+   margin-right: calc(12px + 6px);
 }
 
 #bluetooth{
