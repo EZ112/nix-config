@@ -19,8 +19,6 @@
       dunst
       libnotify
 
-      # Screen capture
-      hyprshot
 
       # Terminal
       ghostty

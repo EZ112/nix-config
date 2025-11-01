@@ -9,5 +9,10 @@
   };
   # hint electron app to use wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  environment.systemPackages = with pkgs; [
+     hyprshot
+     hyprlock
+  ];
 }
 
