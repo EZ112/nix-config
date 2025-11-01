@@ -18,6 +18,7 @@ in
       ./system/compositor.nix
       ./system/fonts.nix
       ./system/network.nix
+      ./system/polkit.nix
       ./system/login.nix
 
       # User
