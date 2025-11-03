@@ -12,6 +12,7 @@
      impala
      wl-clipboard
      mpv
+     ffmpeg
   ];
 }
 
