@@ -47,6 +47,12 @@
 	 core.editor = "nvim";
       };
     };
+    yazi = {
+      enable = true;
+      plugins = {
+	 mount = pkgs.yaziPlugins.mount;
+      };
+    };
    };
 
    # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -61,6 +67,7 @@
     "nvim/init.lua".source = ../../nvim/init.lua;
     "nvim/stylua.toml".source = ../../nvim/stylua.toml;
     "starship.toml".source = ../../starship.toml;
+    "yazi/keymap.toml".source = ../../yazi/keymap.toml;
 
     # Directory
     "ghostty".source = ../../ghostty;
