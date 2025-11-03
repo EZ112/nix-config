@@ -11,6 +11,7 @@
      gnumake
      impala
      wl-clipboard
+     mpv
   ];
 }
 
