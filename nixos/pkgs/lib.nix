@@ -13,6 +13,9 @@
      wl-clipboard
      mpv
      ffmpeg
+     sassc
+     gnome-themes-extra
+     gtk-engine-murrine
+     nwg-look
   ];
 }
-

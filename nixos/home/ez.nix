@@ -59,7 +59,8 @@
    # plain files is through 'home.file'.
    home.file = {
       ".bashrc".source = ../../.bashrc;
-      ".local/share/icons".source = ../../icons;
+      ".icons".source = ../../gtk/icons;
+      ".themes".source = ../../gtk/themes;
    };
 
    xdg.configFile = {
