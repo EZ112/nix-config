@@ -14,6 +14,7 @@ in
 
       # System
       ./system/base.nix
+      ./system/audio.nix
       ./system/bluetooth.nix
       ./system/compositor.nix
       ./system/fonts.nix
