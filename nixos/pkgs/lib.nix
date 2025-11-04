@@ -17,6 +17,5 @@
      gnome-themes-extra
      gtk-engine-murrine
      nwg-look
-     pcmanfm
   ];
 }

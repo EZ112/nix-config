@@ -17,6 +17,7 @@ in
       ./system/audio.nix
       ./system/bluetooth.nix
       ./system/compositor.nix
+      ./system/file-manager.nix
       ./system/fonts.nix
       ./system/network.nix
       ./system/polkit.nix
