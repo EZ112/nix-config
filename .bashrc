@@ -9,3 +9,5 @@ alias ncg='sudo nix-collect-garbage -d && nix-collect-garbage -d'
 
 # Starship
 eval "$(starship init bash)"
+
+export EDITOR="nvim"
