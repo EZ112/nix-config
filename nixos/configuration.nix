@@ -35,6 +35,8 @@ in
       ./home/config.nix
     ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   system.stateVersion = "25.05"; # Do not Change this value
 }
 
