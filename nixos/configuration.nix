@@ -28,6 +28,7 @@ in
 
       # Packages
       ./pkgs/lib.nix
+      ./pkgs/chat.nix
       ./pkgs/starship.nix
 
       # Home Manager
