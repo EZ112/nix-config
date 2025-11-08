@@ -1,1 +1,19 @@
-theme=GruvboxDark
+theme = GruvboxDark
+mouse-hide-while-typing = true
+
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+keybind = alt+k=goto_split:top
+keybind = alt+j=goto_split:bottom
+
+keybind = ctrl+space>n=new_tab
+
+keybind = ctrl+space>h=new_split:left
+keybind = ctrl+space>l=new_split:right
+keybind = ctrl+space>k=new_split:up
+keybind = ctrl+space>j=new_split:down
+
+keybind = ctrl+space>x=close_surface
+keybind = ctrl+space>z=toggle_split_zoom
+
+window-save-state = always
