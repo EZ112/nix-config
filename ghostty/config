@@ -1,5 +1,6 @@
 theme = GruvboxDark
 mouse-hide-while-typing = true
+gtk-tabs-location = bottom
 
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
