@@ -30,6 +30,9 @@
       rofi-wayland
 
       # LSP
+      eslint_d
+      prettierd
+      vscode-langservers-extracted
       lua-language-server
       stylua
    ];

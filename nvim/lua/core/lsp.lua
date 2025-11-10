@@ -1,5 +1,6 @@
 vim.lsp.enable({
   'lua_ls',
+  'eslint',
 })
 
 local diagnostic = vim.diagnostic
