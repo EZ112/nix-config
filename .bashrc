@@ -8,7 +8,8 @@ alias nrs='sudo nixos-rebuild switch -I nixos-config=$HOME/dotfiles/nixos/config
 alias ncg='sudo nix-collect-garbage -d && nix-collect-garbage -d'
 
 # Eval
-eval "$(starship init bash)"
 eval "$(direnv hook bash)"
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 
 export EDITOR="nvim"

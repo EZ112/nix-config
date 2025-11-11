@@ -16,5 +16,7 @@
      devenv
      direnv
      lazysql
+     zoxide
+     fzf
   ];
 }
