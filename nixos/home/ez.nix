@@ -31,6 +31,7 @@
 
       # LSP
       eslint_d
+      emmet-ls
       prettierd
       vscode-langservers-extracted
       lua-language-server
