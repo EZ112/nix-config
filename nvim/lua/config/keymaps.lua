@@ -33,3 +33,6 @@ map('n', '<leader>gt', builtin.git_status, { desc = 'Telescope git status' })
 map('n', '<leader>gm', builtin.git_commits, { desc = 'Telescope git commits' })
 map('n', '<leader>gb', builtin.git_branches, { desc = 'Telescope git branches' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- auto session
+map('n', '<leader>sd', '<cmd>AutoSession deletePicker<CR>', { desc = 'Session delete picker' })
