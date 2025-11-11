@@ -3,7 +3,11 @@ return {
   dependencies = { 'rafamadriz/friendly-snippets' },
   version = '1.*',
   opts = {
-    keymap = { preset = 'super-tab' },
+    keymap = {
+      preset = 'enter',
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
+    },
     completion = { documentation = { auto_show = false } },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
