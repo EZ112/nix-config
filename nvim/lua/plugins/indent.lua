@@ -1,8 +1,8 @@
 return {
-  'lukas-reineke/indent-blankline.nvim',
-  main = 'ibl',
-  opts = {
-    indent = { char = '│' },
-    scope = { char = '│' },
-  },
+  'nvimdev/indentmini.nvim',
+  config = function()
+    require('indentmini').setup()
+    vim.cmd.highlight('link IndentLine Whitespace')
+    vim.cmd.highlight('link IndentLineCurrent Normal')
+  end,
 }
