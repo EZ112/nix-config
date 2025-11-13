@@ -31,7 +31,7 @@ map('n', '<leader>fw', telescope_builtin.live_grep, { desc = 'Telescope live gre
 map('n', '<leader>fb', telescope_builtin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>gt', telescope_builtin.git_status, { desc = 'Telescope git status' })
 map('n', '<leader>gm', telescope_builtin.git_commits, { desc = 'Telescope git commits' })
-map('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Telescope git branches' })
+map('n', '<leader>gbr', telescope_builtin.git_branches, { desc = 'Telescope git branches' })
 map('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- auto session
@@ -40,3 +40,21 @@ map('n', '<leader>sd', '<cmd>AutoSession deletePicker<CR>', { desc = 'Session de
 -- code action
 local code_action = require('tiny-code-action').code_action
 map('n', '<leader>ca', code_action, { desc = 'Code Action', noremap = true, silent = true })
+
+-- gitsigns
+local gitsigns = require('gitsigns')
+map('n', ']c', function()
+  if vim.wo.diff then
+    vim.cmd.normal({ ']c', bang = true })
+  else
+    gitsigns.nav_hunk('next')
+  end
+end, { desc = 'Next hunk' })
+map('n', '[c', function()
+  if vim.wo.diff then
+    vim.cmd.normal({ '[c', bang = true })
+  else
+    gitsigns.nav_hunk('prev')
+  end
+end, { desc = 'Prev hunk' })
+map('n', '<leader>gbm', gitsigns.blame, { desc = 'Git blame' })
