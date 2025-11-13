@@ -8,7 +8,7 @@ return {
       ['<Tab>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
     },
-    completion = { documentation = { auto_show = false } },
+    completion = { documentation = { auto_show = true } },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },

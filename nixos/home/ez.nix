@@ -30,11 +30,16 @@
       rofi-wayland
 
       # LSP
-      eslint_d
-      emmet-ls
-      prettierd
-      vscode-langservers-extracted
       lua-language-server
+      vscode-langservers-extracted
+      typescript-language-server
+      emmet-ls
+
+      # Lint
+      eslint_d
+
+      # Formatter
+      prettierd
       stylua
    ];
 
