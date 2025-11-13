@@ -25,14 +25,18 @@ local dropbar_api = require('dropbar.api')
 map('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
 
 -- telescope
-local builtin = require('telescope.builtin')
-map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-map('n', '<leader>fw', builtin.live_grep, { desc = 'Telescope live grep' })
-map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-map('n', '<leader>gt', builtin.git_status, { desc = 'Telescope git status' })
-map('n', '<leader>gm', builtin.git_commits, { desc = 'Telescope git commits' })
-map('n', '<leader>gb', builtin.git_branches, { desc = 'Telescope git branches' })
-map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+local telescope_builtin = require('telescope.builtin')
+map('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Telescope find files' })
+map('n', '<leader>fw', telescope_builtin.live_grep, { desc = 'Telescope live grep' })
+map('n', '<leader>fb', telescope_builtin.buffers, { desc = 'Telescope buffers' })
+map('n', '<leader>gt', telescope_builtin.git_status, { desc = 'Telescope git status' })
+map('n', '<leader>gm', telescope_builtin.git_commits, { desc = 'Telescope git commits' })
+map('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Telescope git branches' })
+map('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- auto session
 map('n', '<leader>sd', '<cmd>AutoSession deletePicker<CR>', { desc = 'Session delete picker' })
+
+-- code action
+local code_action = require('tiny-code-action').code_action
+map('n', '<leader>ca', code_action, { desc = 'Code Action', noremap = true, silent = true })
