@@ -80,3 +80,6 @@ map({ 'n', 'x', 'o' }, 'S', require('flash').treesitter, { desc = 'Flash Treesit
 map('o', 'r', require('flash').remote, { desc = 'Remote Flash' })
 map({ 'o', 'x' }, 'R', require('flash').treesitter_search, { desc = 'Treesitter Search' })
 map('c', '<c-s>', require('flash').toggle, { desc = 'Toggle Flash Search' })
+
+-- lsp
+map('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP go to definition' })
