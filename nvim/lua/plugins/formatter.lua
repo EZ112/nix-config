@@ -2,10 +2,6 @@ return {
   'stevearc/conform.nvim',
   config = function()
     local prettier_ft = {
-      'javascript',
-      'javascriptreact',
-      'typescript',
-      'typescriptreact',
       'json',
       'jsonc',
       'toml',
@@ -14,20 +10,28 @@ return {
       'html',
       'markdown',
     }
+    local js_ft = {
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact',
+    }
+
     local formatters_by_ft = {}
     for _, ft in ipairs(prettier_ft) do
       formatters_by_ft[ft] = { 'prettierd' }
+    end
+    for _, ft in ipairs(js_ft) do
+      formatters_by_ft[ft] = { 'eslint_d', 'prettierd' }
     end
     formatters_by_ft['lua'] = { 'stylua' }
 
     require('conform').setup({
       formatters_by_ft = formatters_by_ft,
-    })
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      pattern = '*',
-      callback = function(args)
-        require('conform').format({ bufnr = args.buf })
-      end,
+      format_on_save = {
+        timeout_ms = 2000,
+        lsp_fallback = true,
+      },
     })
   end,
 }
