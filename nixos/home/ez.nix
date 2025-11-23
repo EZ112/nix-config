@@ -29,6 +29,12 @@
       # Window switcher
       rofi-wayland
 
+      # Compiler
+      gcc
+
+      # Package manager
+      luajitPackages.luarocks
+
       # LSP
       lua-language-server
       vscode-langservers-extracted
