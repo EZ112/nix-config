@@ -18,5 +18,6 @@
      lazysql
      zoxide
      fzf
+     jamesdsp
   ];
 }
