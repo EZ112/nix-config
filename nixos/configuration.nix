@@ -21,6 +21,7 @@ in
       ./system/fonts.nix
       ./system/network.nix
       ./system/polkit.nix
+      ./system/virtual-camera.nix
       ./system/login.nix
 
       # User

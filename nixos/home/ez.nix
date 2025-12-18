@@ -58,13 +58,26 @@
            name = "Izzi";
            email = "izzidz@gmail.com";
          };
-	 core.editor = "nvim";
+         core.editor = "nvim";
       };
     };
+
+    obs-studio = {
+      enable = true;
+      package = (
+        pkgs.obs-studio.override {
+          cudaSupport = true;
+        }
+      );
+      plugins = with pkgs.obs-studio-plugins; [
+        obs-backgroundremoval
+      ];
+    };
+
     yazi = {
       enable = true;
       plugins = {
-	 mount = pkgs.yaziPlugins.mount;
+        mount = pkgs.yaziPlugins.mount;
       };
     };
    };
