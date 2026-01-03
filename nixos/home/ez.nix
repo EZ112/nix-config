@@ -27,7 +27,7 @@
       swww
 
       # Window switcher
-      rofi-wayland
+      rofi
 
       # Compiler
       gcc
@@ -52,7 +52,7 @@
    programs = {
     git = {
       enable = true;
-      extraConfig = {
+      settings = {
          init.defaultBranch = "main";
          user = {
            name = "Izzi";
