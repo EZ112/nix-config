@@ -31,7 +31,6 @@ in
       ./pkgs/lib.nix
       ./pkgs/chat.nix
       ./pkgs/browser.nix
-      ./pkgs/starship.nix
 
       # Home Manager
       (import "${home-manager}/nixos")

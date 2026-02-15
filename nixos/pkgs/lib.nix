@@ -14,9 +14,7 @@
      mpv
      ffmpeg
      devenv
-     direnv
      lazysql
-     zoxide
      fzf
      jamesdsp
   ];

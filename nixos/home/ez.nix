@@ -50,6 +50,18 @@
    ];
 
    programs = {
+    bash = {
+      enable = true;
+      shellAliases = import ./aliases.nix;
+      sessionVariables = import ./variables.nix;
+    };
+
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+
     git = {
       enable = true;
       settings = {
@@ -74,18 +86,27 @@
       ];
     };
 
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+
     yazi = {
       enable = true;
       plugins = {
         mount = pkgs.yaziPlugins.mount;
       };
     };
+
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+    };
    };
 
    # Home Manager is pretty good at managing dotfiles. The primary way to manage
    # plain files is through 'home.file'.
    home.file = {
-      ".bashrc".source = ../../.bashrc;
       ".icons".source = ../../gtk/icons;
       ".themes".source = ../../gtk/themes;
    };
