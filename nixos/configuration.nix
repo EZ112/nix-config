@@ -4,14 +4,9 @@
 
 { config, lib, pkgs, ... }:
 
-let
-  home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz;
-in
 {
   imports =
     [       
-      ./hardware-configuration.nix
-
       # System
       ./system/base.nix
       ./system/audio.nix
@@ -33,7 +28,6 @@ in
       ./pkgs/browser.nix
 
       # Home Manager
-      (import "${home-manager}/nixos")
       ./home/config.nix
     ];
 

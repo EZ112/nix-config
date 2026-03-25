@@ -6,7 +6,7 @@
      neovim 
      ripgrep
      wget
-     neofetch
+     fastfetch
      keychain
      gnumake
      impala
