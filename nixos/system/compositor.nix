@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Hyprland
@@ -11,8 +16,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
-     hyprshot
-     hyprlock
+    hyprshot
+    hyprlock
   ];
 }
-

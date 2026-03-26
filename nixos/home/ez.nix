@@ -1,55 +1,55 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 
 {
-   home.username = "ez";
-   home.homeDirectory = "/home/ez";
+  home.username = "ez";
+  home.homeDirectory = "/home/ez";
 
-   home.sessionVariables = {
-      EDITOR = "nvim";
-   };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
-   home.packages = with pkgs; [
-      # Bar
-      waybar
+  home.packages = with pkgs; [
+    # Bar
+    waybar
 
-      # Font
-      font-manager
+    # Font
+    font-manager
 
-      # Notification
-      dunst
-      libnotify
+    # Notification
+    dunst
+    libnotify
 
+    # Terminal
+    ghostty
 
-      # Terminal
-      ghostty
+    # Wallpaper
+    swww
 
-      # Wallpaper
-      swww
+    # Window switcher
+    rofi
 
-      # Window switcher
-      rofi
+    # Compiler
+    gcc
 
-      # Compiler
-      gcc
+    # Package manager
+    luajitPackages.luarocks
 
-      # Package manager
-      luajitPackages.luarocks
+    # LSP
+    lua-language-server
+    vscode-langservers-extracted
+    typescript-language-server
+    emmet-ls
 
-      # LSP
-      lua-language-server
-      vscode-langservers-extracted
-      typescript-language-server
-      emmet-ls
+    # Lint
+    eslint_d
 
-      # Lint
-      eslint_d
+    # Formatter
+    prettierd
+    stylua
+    nixfmt
+  ];
 
-      # Formatter
-      prettierd
-      stylua
-   ];
-
-   programs = {
+  programs = {
     bash = {
       enable = true;
       shellAliases = import ./aliases.nix;
@@ -65,12 +65,12 @@
     git = {
       enable = true;
       settings = {
-         init.defaultBranch = "main";
-         user = {
-           name = "Izzi";
-           email = "izzidz@gmail.com";
-         };
-         core.editor = "nvim";
+        init.defaultBranch = "main";
+        user = {
+          name = "Izzi";
+          email = "izzidz@gmail.com";
+        };
+        core.editor = "nvim";
       };
     };
 
@@ -102,10 +102,10 @@
       enable = true;
       enableBashIntegration = true;
     };
-   };
+  };
 
-   # GTK Theme
-   gtk = {
+  # GTK Theme
+  gtk = {
     enable = true;
     gtk4.theme = {
       name = "Gruvbox-B-MB-Dark";
@@ -119,9 +119,9 @@
       name = "rose-pine-hyprcursor";
       package = pkgs.rose-pine-hyprcursor;
     };
-   };
+  };
 
-   xdg.configFile = {
+  xdg.configFile = {
     # File
     "nvim/init.lua".source = ../../nvim/init.lua;
     "nvim/stylua.toml".source = ../../nvim/stylua.toml;
@@ -137,7 +137,7 @@
     "nvim/lsp".source = ../../nvim/lsp;
     "rofi".source = ../../rofi;
     "waybar".source = ../../waybar;
-   };
+  };
 
-   home.stateVersion = "25.05"; # Do not Change this value
+  home.stateVersion = "25.05"; # Do not Change this value
 }

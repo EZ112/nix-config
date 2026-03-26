@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
-     discord
-     slack
+    discord
+    slack
   ];
 }

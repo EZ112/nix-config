@@ -15,7 +15,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      disko,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
     in

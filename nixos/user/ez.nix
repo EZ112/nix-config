@@ -1,11 +1,18 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   users.users.ez = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; 
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
   };
 
-  nix.settings.trusted-users = ["root" "ez"];
+  nix.settings.trusted-users = [
+    "root"
+    "ez"
+  ];
 }
-

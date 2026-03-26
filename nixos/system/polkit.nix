@@ -1,13 +1,18 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   security.polkit.enable = true;
 
   systemd.user.services.hyprpolkitagent = {
     description = "Hyprland Polkit Agent";
-    wantedBy = ["graphical-session.target"];
-    wants = ["graphical-session.target"];
-    after = ["graphical-session.target"];
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
@@ -17,4 +22,3 @@
     };
   };
 }
-

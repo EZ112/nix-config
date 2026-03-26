@@ -25,6 +25,7 @@ return {
       formatters_by_ft[ft] = { 'eslint_d', 'prettierd' }
     end
     formatters_by_ft['lua'] = { 'stylua' }
+    formatters_by_ft['nix'] = { 'nixfmt' }
 
     require('conform').setup({
       formatters_by_ft = formatters_by_ft,

@@ -1,7 +1,8 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   imports = [
     ./hardware.nix
-    ./disko.nix 
+    ./disko.nix
     ../../configuration.nix
   ];
 
