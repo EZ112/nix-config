@@ -1,6 +1,7 @@
 theme = Gruvbox Dark
 mouse-hide-while-typing = true
 gtk-tabs-location = bottom
+font-family = "Inconsolata Nerd Font"
 
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
