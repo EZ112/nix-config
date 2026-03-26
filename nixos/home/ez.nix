@@ -104,11 +104,21 @@
     };
    };
 
-   # Home Manager is pretty good at managing dotfiles. The primary way to manage
-   # plain files is through 'home.file'.
-   home.file = {
-      ".icons".source = ../../gtk/icons;
-      ".themes".source = ../../gtk/themes;
+   # GTK Theme
+   gtk = {
+    enable = true;
+    gtk4.theme = {
+      name = "Gruvbox-B-MB-Dark";
+      package = pkgs.gruvbox-gtk-theme;
+    };
+    iconTheme = {
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
+    };
+    cursorTheme = {
+      name = "rose-pine-hyprcursor";
+      package = pkgs.rose-pine-hyprcursor;
+    };
    };
 
    xdg.configFile = {
