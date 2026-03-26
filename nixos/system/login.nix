@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet -r -t -c Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet -r -t -c start-hyprland";
       };
     };
   };
