@@ -6,5 +6,5 @@
     ../../configuration.nix
   ];
 
-  networking.hostName = "nokron";
+  networking.hostName = "leyndell";
 }

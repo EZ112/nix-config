@@ -28,6 +28,15 @@
     in
     {
       nixosConfigurations = {
+        leyndell = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./nixos/hosts/leyndell
+            home-manager.nixosModules.home-manager
+            disko.nixosModules.disko
+          ];
+        };
         nokron = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
