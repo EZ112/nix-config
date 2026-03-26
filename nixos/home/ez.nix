@@ -133,7 +133,6 @@
     "dunst".source = ../../dunst;
     "hypr".source = ../../hypr;
     "mpv".source = ../../mpv;
-    "neofetch".source = ../../neofetch;
     "nvim/lua".source = ../../nvim/lua;
     "nvim/lsp".source = ../../nvim/lsp;
     "rofi".source = ../../rofi;
