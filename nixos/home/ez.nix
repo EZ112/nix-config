@@ -107,10 +107,14 @@
   # GTK Theme
   gtk = {
     enable = true;
-    gtk4.theme = {
-      name = "Gruvbox-B-MB-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+    gtk4 = {
+      theme = {
+        name = "Gruvbox-GTK-Theme";
+        package = pkgs.gruvbox-gtk-theme;
+      };
+      extraConfig.gtk-application-prefer-dark-theme = 1;
     };
+
     iconTheme = {
       name = "Gruvbox-Plus-Dark";
       package = pkgs.gruvbox-plus-icons;
