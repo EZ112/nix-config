@@ -4,29 +4,23 @@
   home.username = "ez";
   home.homeDirectory = "/home/ez";
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = import ./variables.nix;
+
+  imports = [
+    ./programs.nix
+    ./gtk.nix
+  ];
 
   home.packages = with pkgs; [
-    # Bar
-    waybar
-
-    # Font
-    font-manager
+    waybar # Bar
+    font-manager # Font
+    ghostty # Terminal
+    swww # Wallpaper
+    rofi # Window switcher
 
     # Notification
     dunst
     libnotify
-
-    # Terminal
-    ghostty
-
-    # Wallpaper
-    swww
-
-    # Window switcher
-    rofi
 
     # Compiler
     gcc
@@ -48,84 +42,6 @@
     stylua
     nixfmt
   ];
-
-  programs = {
-    bash = {
-      enable = true;
-      shellAliases = import ./aliases.nix;
-      sessionVariables = import ./variables.nix;
-    };
-
-    direnv = {
-      enable = true;
-      enableBashIntegration = true;
-      nix-direnv.enable = true;
-    };
-
-    git = {
-      enable = true;
-      settings = {
-        init.defaultBranch = "main";
-        user = {
-          name = "Izzi";
-          email = "izzidz@gmail.com";
-        };
-        core.editor = "nvim";
-      };
-    };
-
-    obs-studio = {
-      enable = true;
-      package = (
-        pkgs.obs-studio.override {
-          cudaSupport = true;
-        }
-      );
-      plugins = with pkgs.obs-studio-plugins; [
-        obs-backgroundremoval
-      ];
-    };
-
-    starship = {
-      enable = true;
-      enableBashIntegration = true;
-    };
-
-    yazi = {
-      enable = true;
-      plugins = {
-        mount = pkgs.yaziPlugins.mount;
-      };
-    };
-
-    zoxide = {
-      enable = true;
-      enableBashIntegration = true;
-    };
-  };
-
-  # GTK Theme
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
-    };
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    gtk4 = {
-      theme = config.gtk.theme;
-      extraConfig.gtk-application-prefer-dark-theme = 1;
-    };
-
-    iconTheme = {
-      name = "Gruvbox-Plus-Dark";
-      package = pkgs.gruvbox-plus-icons;
-    };
-    cursorTheme = {
-      name = "rose-pine-hyprcursor";
-      package = pkgs.rose-pine-hyprcursor;
-    };
-  };
 
   xdg.configFile = {
     # File
