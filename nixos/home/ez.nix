@@ -8,6 +8,7 @@
 
   imports = [
     ./programs.nix
+    ./ssh.nix
     ./gtk.nix
   ];
 
