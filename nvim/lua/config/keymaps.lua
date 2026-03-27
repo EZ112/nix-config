@@ -58,6 +58,7 @@ map('n', '[c', function()
   end
 end, { desc = 'Prev hunk' })
 map('n', '<leader>gbm', gitsigns.blame, { desc = 'Git blame' })
+map('n', '<leader>gd', gitsigns.diffthis, { desc = 'Git diff' })
 
 -- harpoon
 local harpoon = require('harpoon')
