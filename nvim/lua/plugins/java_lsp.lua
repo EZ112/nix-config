@@ -46,9 +46,12 @@ return {
         })
       end
 
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+
       require('jdtls').start_or_attach({
         cmd = cmd,
         root_dir = root_dir,
+        capabilities = capabilities,
         settings = {
           java = {
             configuration = {
