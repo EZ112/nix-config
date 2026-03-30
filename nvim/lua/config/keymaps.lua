@@ -84,3 +84,7 @@ map('c', '<c-s>', require('flash').toggle, { desc = 'Toggle Flash Search' })
 
 -- lsp
 map('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP go to definition' })
+
+-- dadbod
+map('n', '<leader>du', '<cmd>DBUIToggle<cr>', { desc = 'Toggle Dadbod UI' })
+map('n', '<leader>dl', '<cmd>DBUIFindBuffer<cr>', { desc = 'Find Last DB Buffer' })

@@ -19,7 +19,6 @@
     mpv
     ffmpeg
     devenv
-    lazysql
     fzf
     jamesdsp
   ];
