@@ -47,6 +47,7 @@
       plugins = {
         mount = pkgs.yaziPlugins.mount;
       };
+      shellWrapperName = "y";
     };
 
     zoxide = {
