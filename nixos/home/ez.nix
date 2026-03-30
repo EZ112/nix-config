@@ -30,6 +30,8 @@
     luajitPackages.luarocks
 
     # LSP
+    jdt-language-server
+    lombok
     lua-language-server
     vscode-langservers-extracted
     typescript-language-server
@@ -39,6 +41,7 @@
     eslint_d
 
     # Formatter
+    google-java-format
     prettierd
     stylua
     nixfmt

@@ -21,9 +21,12 @@ return {
     for _, ft in ipairs(prettier_ft) do
       formatters_by_ft[ft] = { 'prettierd' }
     end
+
     for _, ft in ipairs(js_ft) do
       formatters_by_ft[ft] = { 'eslint_d', 'prettierd' }
     end
+
+    formatters_by_ft['java'] = { 'google-java-format' }
     formatters_by_ft['lua'] = { 'stylua' }
     formatters_by_ft['nix'] = { 'nixfmt' }
 
