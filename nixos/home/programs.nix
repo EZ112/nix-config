@@ -5,6 +5,9 @@
     bash = {
       enable = true;
       shellAliases = import ./aliases.nix;
+      initExtra = ''
+        [ -f ~/.bashrc_local ] && source ~/.bashrc_local
+      '';
     };
 
     direnv = {

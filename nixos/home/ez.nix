@@ -48,6 +48,10 @@
     nixfmt
   ];
 
+  home.file = {
+    ".bashrc_local.example".source = ../../.bashrc_local.example;
+  };
+
   xdg.configFile = {
     # File
     "nvim/init.lua".source = ../../nvim/init.lua;

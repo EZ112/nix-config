@@ -87,3 +87,6 @@ map('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP go to definition' })
 -- dadbod
 map('n', '<leader>du', '<cmd>DBUIToggle<cr>', { desc = 'Toggle Dadbod UI' })
 map('n', '<leader>dl', '<cmd>DBUIFindBuffer<cr>', { desc = 'Find Last DB Buffer' })
+
+-- gemini
+map('v', '<leader>ce', ':GeminiCodeExplain<cr>', { desc = 'Gemini Code Explain' })
