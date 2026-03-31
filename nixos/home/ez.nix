@@ -44,6 +44,7 @@
     google-java-format
     prettierd
     stylua
+    xmlformat
     nixfmt
   ];
 
