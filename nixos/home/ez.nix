@@ -26,6 +26,9 @@
     # Compiler
     gcc
 
+    # AI
+    gemini-cli
+
     # Package manager
     luajitPackages.luarocks
 
