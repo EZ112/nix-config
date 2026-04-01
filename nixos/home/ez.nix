@@ -73,5 +73,14 @@
     "waybar".source = ../../waybar;
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = [ "firefox.desktop" ];
+      "x-scheme-handler/http" = [ "firefox.desktop" ];
+      "x-scheme-handler/https" = [ "firefox.desktop" ];
+    };
+  };
+
   home.stateVersion = "25.05"; # Do not Change this value
 }
