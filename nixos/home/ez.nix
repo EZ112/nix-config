@@ -29,6 +29,10 @@
     # AI
     gemini-cli
 
+    # Devtool
+    bruno
+    devtoolbox
+
     # Package manager
     luajitPackages.luarocks
 
