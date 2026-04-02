@@ -2,6 +2,30 @@
 
 {
   programs = {
+    alacritty = {
+      enable = true;
+      settings = {
+        general.import = [
+          "${pkgs.alacritty-theme}/share/alacritty-theme/gruvbox_dark.toml"
+        ];
+        font = {
+          size = 12.0;
+          normal = {
+            family = "Inconsolata Nerd Font";
+            style = "Regular";
+          };
+          bold = {
+            family = "Inconsolata Nerd Font";
+            style = "Bold";
+          };
+          italic = {
+            family = "Inconsolata Nerd Font";
+            style = "Italic";
+          };
+        };
+      };
+    };
+
     bash = {
       enable = true;
       shellAliases = import ./aliases.nix;
@@ -43,6 +67,17 @@
     starship = {
       enable = true;
       enableBashIntegration = true;
+    };
+
+    tmux = {
+      enable = true;
+      shortcut = "Space";
+      baseIndex = 1;
+      escapeTime = 0;
+      plugins = with pkgs; [
+        tmuxPlugins.gruvbox
+      ];
+      extraConfig = builtins.readFile ../../tmux/tmux.conf;
     };
 
     yazi = {

@@ -15,7 +15,6 @@
   home.packages = with pkgs; [
     waybar # Bar
     font-manager # Font
-    ghostty # Terminal
     swww # Wallpaper
     rofi # Window switcher
 
@@ -69,7 +68,6 @@
     "yazi/keymap.toml".source = ../../yazi/keymap.toml;
 
     # Directory
-    "ghostty".source = ../../ghostty;
     "dunst".source = ../../dunst;
     "hypr".source = ../../hypr;
     "mpv".source = ../../mpv;
