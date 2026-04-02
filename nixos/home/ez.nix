@@ -43,6 +43,8 @@
     vscode-langservers-extracted
     typescript-language-server
     emmet-ls
+    basedpyright
+    ruff
 
     # Lint
     eslint_d

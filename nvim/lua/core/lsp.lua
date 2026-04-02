@@ -4,6 +4,8 @@ vim.lsp.enable({
   'ts_ls',
   'emmet_ls',
   'cssls',
+  'basedpyright',
+  'ruff',
 })
 
 local diagnostic = vim.diagnostic
