@@ -8,6 +8,7 @@
 
   imports = [
     ./programs.nix
+    ./services.nix
     ./ssh.nix
     ./gtk.nix
   ];
@@ -24,6 +25,9 @@
 
     # Compiler
     gcc
+
+    # Calendar
+    gcalcli
 
     # AI
     gemini-cli
