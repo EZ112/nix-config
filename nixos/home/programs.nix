@@ -82,6 +82,11 @@
 
     yazi = {
       enable = true;
+      theme = {
+        flavor = {
+          dark = "gruvbox";
+        };
+      };
       plugins = {
         mount = pkgs.yaziPlugins.mount;
       };

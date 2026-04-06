@@ -75,6 +75,7 @@
     "nvim/lsp".source = ../../nvim/lsp;
     "rofi".source = ../../rofi;
     "waybar".source = ../../waybar;
+    "yazi/flavors".source = ../../yazi/flavors;
   };
 
   xdg.mimeApps = {
