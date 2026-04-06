@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 
+let
+  calendarNotifier = pkgs.writeShellScriptBin "calendar-notifier" ''
+    EVENTS=$(${pkgs.gcalcli}/bin/gcalcli remind 15 'echo %s')
+
+    if [ ! -z "$EVENTS" ]; then
+      ${pkgs.dunst}/bin/dunstify -a "Google Calendar" -h string:x-dunst-stack-tag:calendar_alert "Upcoming Event" "$EVENTS";
+      ${pkgs.pipewire}/bin/pw-play ${../../sfx/notification.oga}
+    fi
+  '';
+in
 {
   systemd.user.services.gcal-notifier = {
     Unit = {
@@ -9,11 +19,7 @@
 
     Service = {
       Type = "oneshot";
-      ExecStart = pkgs.writeScript "gcal-notify-script" ''
-        #!${pkgs.bash}/bin/bash
-        ${pkgs.libcanberra-gtk3}/bin/canberra-gtk-play -f ${../../sfx/notification.oga};
-        ${pkgs.gcalcli}/bin/gcalcli remind 15 '${pkgs.dunst}/bin/dunstify -a "Google Calendar" -h string:x-dunst-stack-tag:calendar_alert "Upcoming Event" "%s"'
-      '';
+      ExecStart = "${calendarNotifier}/bin/calendar-notifier";
     };
   };
 
