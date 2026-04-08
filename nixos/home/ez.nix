@@ -9,6 +9,7 @@
   imports = [
     ./programs.nix
     ./services.nix
+    ./workspaces.nix
     ./ssh.nix
     ./gtk.nix
   ];
@@ -66,6 +67,8 @@
 
   xdg.configFile = {
     # File
+    "hypr/hyprland.conf".source = ../../hypr/hyprland.conf;
+    "hypr/hyprlock.conf".source = ../../hypr/hyprlock.conf;
     "nvim/init.lua".source = ../../nvim/init.lua;
     "nvim/stylua.toml".source = ../../nvim/stylua.toml;
     "starship.toml".source = ../../starship.toml;
@@ -73,7 +76,6 @@
 
     # Directory
     "dunst".source = ../../dunst;
-    "hypr".source = ../../hypr;
     "mpv".source = ../../mpv;
     "nvim/lua".source = ../../nvim/lua;
     "nvim/lsp".source = ../../nvim/lsp;
