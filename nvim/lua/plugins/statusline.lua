@@ -1,5 +1,18 @@
 return {
-  -- Calls `require('slimline').setup({})`
   'sschleemilch/slimline.nvim',
-  opts = {},
+  opts = {
+    components = {
+      left = {
+        'recording',
+        'mode',
+        'path',
+        'git',
+      },
+      right = {
+        'diagnostics',
+        'filetype_lsp',
+        'progress',
+      },
+    },
+  },
 }
