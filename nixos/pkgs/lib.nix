@@ -21,5 +21,6 @@
     devenv
     fzf
     jamesdsp
+    btop
   ];
 }
