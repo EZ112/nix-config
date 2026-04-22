@@ -6,6 +6,7 @@ vim.lsp.enable({
   'cssls',
   'basedpyright',
   'ruff',
+  'tailwindcss',
 })
 
 local diagnostic = vim.diagnostic

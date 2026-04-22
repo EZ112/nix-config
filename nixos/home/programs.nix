@@ -40,6 +40,8 @@
       nix-direnv.enable = true;
     };
 
+    brave.enable = true;
+
     git = {
       enable = true;
       settings = {

@@ -29,7 +29,6 @@
     # Packages
     ./pkgs/lib.nix
     ./pkgs/chat.nix
-    ./pkgs/browser.nix
 
     # Home Manager
     ./home/config.nix

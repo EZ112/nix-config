@@ -46,6 +46,7 @@
     lua-language-server
     vscode-langservers-extracted
     typescript-language-server
+    tailwindcss-language-server
     emmet-ls
     basedpyright
     ruff
@@ -83,15 +84,6 @@
     "rofi".source = ../../rofi;
     "waybar".source = ../../waybar;
     "yazi/flavors".source = ../../yazi/flavors;
-  };
-
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = [ "firefox.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-    };
   };
 
   home.stateVersion = "25.05"; # Do not Change this value
