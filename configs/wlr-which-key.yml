@@ -56,8 +56,14 @@ menu:
     desc: Game Engine - godot
     cmd: uwsm app -- godot
   - key: "o"
-    desc: Broadcast - obs
-    cmd: uwsm app -- obs
+    desc:
+    submenu:
+      - key: "b"
+        desc: Notes - obsidian
+        cmd: uwsm app -- obsidian
+      - key: "s"
+        desc: Broadcast - obs
+        cmd: uwsm app -- obs
   - key: "t"
     desc: Terminal - kitty
     cmd: uwsm app -- kitty

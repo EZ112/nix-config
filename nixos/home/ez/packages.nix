@@ -7,6 +7,7 @@
     libnotify # Notification
     pcmanfm # File manager
     claude-code # AI
+    obsidian # Docs
 
     # Compiler
     gcc
