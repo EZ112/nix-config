@@ -6,7 +6,7 @@ local menu = "wlr-which-key"
 
 -- Keybinds
 local mainMod = "SUPER"
-local subMod = "ALT"
+local subMod = "CTRL"
 
 local mod = function(...)
 	return table.concat({ mainMod, ... }, " + ")
