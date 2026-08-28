@@ -6,9 +6,14 @@ local menu = "wlr-which-key"
 
 -- Keybinds
 local mainMod = "SUPER"
+local subMod = "ALT"
 
 local mod = function(...)
 	return table.concat({ mainMod, ... }, " + ")
+end
+
+local function sub_mod(...)
+	return table.concat({ subMod, ... }, " + ")
 end
 
 local binds = {
@@ -34,6 +39,12 @@ local binds = {
 	{ mod("SHIFT", "J"), hl.dsp.window.move({ direction = "d" }) },
 	{ mod("SHIFT", "K"), hl.dsp.window.move({ direction = "u" }) },
 	{ mod("SHIFT", "L"), hl.dsp.window.move({ direction = "r" }) },
+
+	-- Group Nav
+	{ sub_mod("L"), hl.dsp.group.next() },
+	{ sub_mod("H"), hl.dsp.group.prev() },
+	{ sub_mod("SHIFT", "L"), hl.dsp.group.move_window({ forward = true }) },
+	{ sub_mod("SHIFT", "H"), hl.dsp.group.move_window() },
 
 	-- Scroll through workspaces with mouse
 	{ mod("mouse_down"), hl.dsp.focus({ workspace = "e+1" }) },
@@ -85,6 +96,7 @@ for i = 1, 10 do
 	local key = i % 10
 	table.insert(binds, { mod(key), hl.dsp.focus({ workspace = i }) })
 	table.insert(binds, { mod("SHIFT", key), hl.dsp.window.move({ workspace = i }) })
+	table.insert(binds, { sub_mod(key), hl.dsp.group.active({ index = i }) })
 end
 
 utils.apply_all_binds(binds)

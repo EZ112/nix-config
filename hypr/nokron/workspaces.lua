@@ -20,6 +20,7 @@ local window_rules = {
 		name = "brave-browser",
 		match = { class = "^(brave-browser)$" },
 		no_initial_focus = true,
+		group = "set always",
 		workspace = "2",
 	},
 	{ name = "godot-editor", match = { class = "Godot" }, workspace = "3" },

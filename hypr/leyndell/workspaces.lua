@@ -15,6 +15,7 @@ local window_rules = {
 		name = "brave-browser",
 		match = { class = "^(brave-browser)$" },
 		no_initial_focus = true,
+		group = "set always",
 		workspace = "1",
 	},
 	{
