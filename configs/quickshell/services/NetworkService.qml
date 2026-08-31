@@ -5,17 +5,18 @@ import QtQuick
 QtObject {
     readonly property bool connected: Networking.connectivity !== NetworkConnectivity.None
     readonly property var networkStates: Networking.devices.values.map(d => d.state)
-    readonly property NetworkDevice networkDevice: Networking.devices.values[networkStates.indexOf(ConnectionState.Connected)] ?? null
+    readonly property NetworkDevice networkDevice: Networking.devices.values.find(d => d.connected) ?? null
 
     readonly property WifiNetwork wifiNetwork: {
         if (!networkDevice || networkDevice.type !== DeviceType.Wifi)
             return null;
-        return networkDevice.networks.values.find(d => d instanceof WifiNetwork);
+        return networkDevice.networks.values.find(d => d instanceof WifiNetwork && d.connected) ?? null;
     }
 
     readonly property int strength: {
         if (!wifiNetwork)
             return 0;
+
         return Math.round(wifiNetwork.signalStrength * 100);
     }
 
