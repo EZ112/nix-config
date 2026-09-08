@@ -8,6 +8,7 @@
     pcmanfm # File manager
     claude-code # AI
     obsidian # Docs
+    dbeaver-bin # DB Client
 
     # Compiler
     gcc

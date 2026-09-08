@@ -43,6 +43,9 @@ menu:
   - key: "d"
     desc:
     submenu:
+      - key: "b"
+        desc: DB Client - dbeaver
+        cmd: uwsm app -- dbeaver
       - key: "c"
         desc: Discord
         cmd: uwsm app -- discord
