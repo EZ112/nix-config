@@ -6,15 +6,36 @@ local menu = "wlr-which-key"
 
 -- Keybinds
 local mainMod = "SUPER"
-local subMod = "CTRL"
 
 local mod = function(...)
 	return table.concat({ mainMod, ... }, " + ")
 end
 
-local function sub_mod(...)
-	return table.concat({ subMod, ... }, " + ")
+local function register_submap(name, keymaps)
+	hl.define_submap(name, function()
+		utils.apply_all_binds(keymaps)
+		hl.bind("Escape", hl.dsp.submap("reset"))
+	end)
 end
+
+local move_window_map = {
+	{ "H", hl.dsp.window.move({ direction = "l" }) },
+	{ "J", hl.dsp.window.move({ direction = "d" }) },
+	{ "K", hl.dsp.window.move({ direction = "u" }) },
+	{ "L", hl.dsp.window.move({ direction = "r" }) },
+}
+
+for i = 1, 10 do
+	table.insert(move_window_map, { tostring(i % 10), hl.dsp.window.move({ workspace = i }) })
+end
+
+local move_group_map = {
+	{ "L", hl.dsp.group.move_window({ forward = true }) },
+	{ "H", hl.dsp.group.move_window() },
+}
+
+register_submap("move_window", move_window_map)
+register_submap("move_group", move_group_map)
 
 local binds = {
 	{ mod("T"), hl.dsp.exec_cmd(terminal) },
@@ -35,16 +56,12 @@ local binds = {
 	{ mod("L"), hl.dsp.focus({ direction = "r" }) },
 
 	-- Move windows (keyboard)
-	{ mod("SHIFT", "H"), hl.dsp.window.move({ direction = "l" }) },
-	{ mod("SHIFT", "J"), hl.dsp.window.move({ direction = "d" }) },
-	{ mod("SHIFT", "K"), hl.dsp.window.move({ direction = "u" }) },
-	{ mod("SHIFT", "L"), hl.dsp.window.move({ direction = "r" }) },
+	{ mod("M"), hl.dsp.submap("move_window") },
 
 	-- Group Nav
-	{ sub_mod("L"), hl.dsp.group.next() },
-	{ sub_mod("H"), hl.dsp.group.prev() },
-	{ sub_mod("SHIFT", "L"), hl.dsp.group.move_window({ forward = true }) },
-	{ sub_mod("SHIFT", "H"), hl.dsp.group.move_window() },
+	{ mod("SHIFT", "L"), hl.dsp.group.next() },
+	{ mod("SHIFT", "H"), hl.dsp.group.prev() },
+	{ mod("G"), hl.dsp.submap("move_group") },
 
 	-- Scroll through workspaces with mouse
 	{ mod("mouse_down"), hl.dsp.focus({ workspace = "e+1" }) },
@@ -95,8 +112,7 @@ local binds = {
 for i = 1, 10 do
 	local key = i % 10
 	table.insert(binds, { mod(key), hl.dsp.focus({ workspace = i }) })
-	table.insert(binds, { mod("SHIFT", key), hl.dsp.window.move({ workspace = i }) })
-	table.insert(binds, { sub_mod(key), hl.dsp.group.active({ index = i }) })
+	table.insert(binds, { mod("SHIFT", key), hl.dsp.group.active({ index = i }) })
 end
 
 utils.apply_all_binds(binds)
